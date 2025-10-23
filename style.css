@@ -1,0 +1,923 @@
+body{
+    background-color: #282ea7;
+     background-image: url("https://cdn.jsdelivr.net/gh/ElIngenieroSupremo2026/epi_page_elements/img/fondo.webp");
+}
+
+.titulo{
+    background-color:#fff;
+    display:block;
+}
+.titulo img{
+  width: 50%;
+  height: 50%;
+}
+
+.galeria {
+  display: flex;        /* acomoda los hijos en fila */
+  flex-wrap: wrap;      /* permite que las imágenes pasen a la siguiente línea si no caben */
+  justify-content: center; /* centra las imágenes horizontalmente */
+  gap: 10px;            /* espacio entre imágenes */
+  padding: 20px;
+}
+
+.galeria img {
+  width: 20%;         /* ancho de cada imagen */
+  height: auto;         /* mantiene proporción */
+  object-fit: cover;    /* evita deformar la imagen */
+  border-radius: 20%;   /* esquinas redondeadas */
+  transition: transform 0.3s; /* efecto hover */
+  border:#fff;
+}
+
+
+.galeria img:hover {
+  transform: scale(1.05); /* agranda un poco al pasar el ratón */
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+  background-color: rgb(200, 201, 229);
+}
+.contenido{
+    background-color: transparent;
+}
+.contenido img{
+    border-radius: 50%;
+    border: 10px solid  rgb(255, 255, 255);
+    
+    
+}
+.hola{
+  background:  #fff ;
+  color:black;
+  text-align: left;
+    margin: 0;
+  padding: 0;
+  
+}
+
+.hate{
+  background-color: #007bff;
+
+}
+.hate p{
+  font-size: 9rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.hola h1{
+  text-align: center;
+  color:darkorange;
+  font-size: 6rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 0;
+  margin: 0;
+  padding: 0;
+}
+.hola p{
+font-size: 1.5rem;
+font-family: Arial, Helvetica, sans-serif;
+
+padding: 0;
+  overflow: hidden; 
+
+}
+.hola svg{
+  display: block;
+
+}
+.hola ul{
+  color: darkorange;
+  font-size: 2rem;
+}
+.hola.upper{
+  background: transparent;
+    margin: 0;
+  padding: 0;
+}
+.hola img{
+
+ border-radius: 10%;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+
+/* Contenedor de galería */
+.galeria-dinamica {
+  position: relative;
+  width: 100%;
+  max-width: 70%;     /* tamaño máximo */
+  height: 350px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Todas las imágenes apiladas */
+.galeria-dinamica img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* recorta sin deformar */
+  opacity: 0;
+  animation: fadeSlide 16s infinite;
+}
+
+/* Animación con delays para cada imagen */
+.galeria-dinamica img:nth-child(1) { animation-delay: 0s; }
+.galeria-dinamica img:nth-child(2) { animation-delay: 4s; }
+.galeria-dinamica img:nth-child(3) { animation-delay: 8s; }
+.galeria-dinamica img:nth-child(4) { animation-delay: 12s; }
+
+/* Keyframes de transición */
+@keyframes fadeSlide {
+  0%   { opacity: 0; transform: scale(1.1) translateX(20px); }
+  5%   { opacity: 1; transform: scale(1) translateX(0); }
+  25%  { opacity: 1; transform: scale(1) translateX(0); }
+  30%  { opacity: 0; transform: scale(0.95) translateX(-20px); }
+  100% { opacity: 0; }
+}
+
+/* Contenedor de la cabecera */
+.topbar{
+width:100%;
+background-color: #ff6600;
+color:#fff;
+position:sticky; /* queda fijo al hacer scroll */
+top:0;
+z-index:1000;
+box-shadow:0 2px 8px rgba(2,6,23,0.4);
+}
+
+
+.topbar .container{
+max-width:1100px;
+margin:0 auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px 16px;
+gap:12px;
+}
+
+
+/* Logo */
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:inherit;
+font-weight:700;
+letter-spacing:0.3px;
+}
+
+
+.brand .logo{
+width:36px;height:36px;border-radius:8px;background:#fff3;display:inline-block;flex:0 0 36px
+}
+
+
+/* Menú principal: horizontal */
+.menu{
+display:flex;
+gap:14px;
+list-style:none;
+/* FONDO ITEMS SECOND */
+background-color: #ff6600;
+align-items:center;
+
+}
+
+.menu a:hover {
+  background: yellow;
+  color: black;
+}
+
+.menu a:active {
+  background: red;
+  color: white;
+}
+/* Estilo del título con neón */
+    .neon-title {
+      font-size: 60px;
+      color: #fff;
+      margin: 20px 0;
+      text-shadow:
+        0 0 10px #00f,   /* azul */
+        0 0 20px #ff0,   /* amarillo */
+        0 0 30px #f00,   /* rojo */
+        0 0 40px #0f0;   /* verde */
+      animation: neonPulse 2s infinite alternate;
+    }
+      .menu > li > a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .menu > li > a:hover {
+    background:#f00;
+  }
+
+  /* Submenús */
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* justo debajo del padre */
+    left: 0;
+    background: #f00;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 180px;
+  }
+
+  .submenu li a {
+    display: block;
+    background-color: #ff6600;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+  }
+
+  .submenu li a:hover {
+    background:#f00;
+  }
+
+  /* Mostrar el submenú al pasar mouse */
+  .menu li:hover .submenu {
+    display: block;
+  }
+  
+  .menu > li {
+    position: relative; /* necesario para los submenús */
+  }
+
+    /* Animación para dar efecto de parpadeo */
+    @keyframes neonPulse {
+      from {
+        text-shadow:
+          0 0 5px #00f,
+          0 0 10px #ff0,
+          0 0 15px #f00,
+          0 0 20px #0f0;
+      }
+      to {
+        text-shadow:
+          0 0 130px #00f,
+          0 0 40px #ff0,
+          0 0 80px #f00,
+          0 0 100px #0f0;
+      }
+    }
+
+    /* Imagen debajo del título */
+    .banner {
+      width: 100%;
+      display: block;
+    }
+.fondodark{
+background-color: #0b1220;
+  padding: 20px 0; /* opcional: controla el espacio con padding en vez de margin */
+
+}
+h1 {
+  margin: 0; /* quita espacio arriba y abajo del h1 */
+}
+
+
+.menu a {
+display:inline-block;
+padding:8px 12px;
+text-decoration:none;
+p{color:#bcc9d6}}
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #0b1220;
+  }
+.social-icons-dark {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  .social-icons-dark a {
+    font-size: 32px;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+
+  .social-icons a {
+    font-size: 32px;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.2);
+  }
+    .tiktok   { color: #00f; }   /* azul */
+  .instagram{ color: orange; } /* naranja */
+  .youtube  { color: red; }    /* rojo */
+  .facebook { color: #1877f2;} /* azul oficial FB */
+  .whatsapp { color: green; }  /* verde */
+  .twitter  { color: yellow; } /* amarillo */
+.slider {
+  width: 80%;            
+  margin: auto;
+  overflow: hidden;       
+  border-radius: 10px;
+  background: #f0f0f0;    
+}
+
+.slides {
+  display: flex;
+  width: calc(300px * 3); 
+  animation: slide 9s linear infinite; 
+}
+
+.slide {
+  width: 300px;           
+  flex-shrink: 0;         
+  margin-right: 10px;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.slide-btn {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  background: #ff6600;
+  color: white;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+.slide-btn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-310px); }
+  66% { transform: translateX(-620px); }
+  100% { transform: translateX(0); }
+}
+.empresas {
+  background-color: #fff;
+  display: flex; 
+  margin: 0%;             /* acomoda en fila */
+  justify-content: center;    /* centra horizontalmente */
+  align-items: center;        /* centra verticalmente */
+  gap: 2%;                  /* espacio entre logos */
+  flex-wrap: wrap;            /* permite que salten a otra línea si no caben */
+  padding: 0%;
+}
+
+
+.empresas img {
+  max-height: 60px;           /* controla el tamaño (alto máximo) */
+  width:auto;                /* mantiene la proporción */
+  transition: transform 0.3s;
+}
+
+.empresas img:hover {
+  transform: scale(1.1);      /* efecto al pasar el ratón */
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;  /* ancho máximo */
+  margin: auto;
+  padding-bottom: 56.25%; /* relación 16:9 */
+  height: 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.footer {
+  background-color: #000; /* oscuro */
+  color: #39ff14; /* verde fosforescente */
+  text-align: center;
+  padding: 20px 10px;
+  font-family: Arial, sans-serif;
+}
+
+.footer a {
+  color: #39ff14;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #00ffcc; /* cambia a turquesa al pasar el ratón */
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.footer img{
+  align-self: center;
+  width: 20%;
+  height: auto;
+}
+.imagencentral{
+ color: #fff;
+}
+.imagencentral img{
+  width: 50%;
+  margin: 5%;
+  height: auto;
+  align-self:center;
+  opacity: 0.8;
+  border-radius: 10%;
+}
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("https://cdn.jsdelivr.net/gh/ElIngenieroSupremo2026/epi_page_elements/img/ZAYDA_TEACH.webp") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5%;
+  color: #000;
+  overflow: hidden; /* para que el pseudo-elemento no sobresalga */
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* altura del desvanecido */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 100%);
+}
+
+    .hero-text {
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.6); /* Transparencia ligera */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      font-weight: bold;
+    }
+
+    .hero-text h2 {
+      font-size: 1.5rem;
+      color: #d60000; /* rojo patriótico como en el ejemplo */
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .cta {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 12px 24px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .cta:hover {
+      background: #0056b3;}
+    
+
+
+    .seccionVideoFondo {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* pantalla completa */
+  overflow: hidden;
+}
+
+.video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* que el video llene todo */
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* oscurece el video */
+  z-index: 1;
+}
+
+.contenidoVideoFondo {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.contenidoVideoFondo h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.contenidoVideoFondo p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.ctas {
+  display: inline-block;
+  background: #ff3b3b;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.ctas:hover {
+  background: #ff5e5e;
+}
+
+.seccionInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 50px 10%;
+  background-color: #fff;
+}
+
+.contenidoInfo {
+  flex: 1;
+}
+
+.contenidoInfo h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contenidoInfo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contenidoInfo p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.imagenInfo {
+  flex: 1;
+  text-align: center;
+}
+
+.imagenInfo img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive: en pantallas pequeñas se apila */
+@media (max-width: 768px) {
+  .seccionInfo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contenidoInfo {
+    margin-bottom: 20px;
+  }
+}
+
+
+.seccionInfoDark {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 50px 10%;
+  background-image: url("https://cdn.jsdelivr.net/gh/ElIngenieroSupremo2026/epi_page_elements/img/mate_fondo.webp");
+}
+
+.contenidoInfoDark {
+  flex: 1;
+}
+
+.contenidoInfoDark h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.contenidoInfoDark h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contenidoInfoDark p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.imagenInfoDark {
+  flex: 1;
+  text-align: center;
+      color: #fff;
+
+}
+
+.imagenInfoDark img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive: en pantallas pequeñas se apila */
+@media (max-width: 768px) {
+  .seccionInfoDark {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* Estilo neón/electrónico para cualquier contenedor */
+  #horasInput, .tablaDias input[type="checkbox"] {
+    cursor: pointer;
+  }
+
+  #horasInput {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 12px;
+    border-radius: 10px;
+    background: #111122;
+    outline: none;
+    box-shadow: 0 0 8px #00ffea inset;
+    margin-bottom: 15px;
+  }
+
+  #horasInput::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #00ffea;
+    box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+    transition: 0.2s;
+  }
+
+  #horasInput::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+  }
+
+  .tablaDias {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+  }
+
+  .tablaDias td {
+    padding: 8px;
+    border: 1px solid #00ffea;
+    text-align: center;
+    border-radius: 5px;
+        color: #20c670;
+
+    transition: 0.3s;
+  }
+
+  .tablaDias td:hover {
+    background: rgba(0, 255, 234, 0.2);
+    box-shadow: 0 0 8px #00ffea inset;
+  }
+
+  .tablaDias input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #00ffea;
+    color: #fff;
+  }
+
+  #valorHorasInput,
+  #diasSeleccionadosInput,
+  #totalInput {
+    font-weight: bold;
+    color: #00ffea;
+    text-shadow: 0 0 5px #00ffea;
+    
+  }
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 0;
+  }
+
+  /* Bandas */
+  .banda {
+    width: 100%;
+    height: 50px;
+    background: repeating-linear-gradient(
+      45deg,
+      #f5b401,
+      #f5b401 20px,
+      #222 20px,
+      #222 40px
+    );
+    background-size: 60px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Movimiento */
+  .banda-arriba {
+    animation: mover-derecha 5s linear infinite;
+  }
+
+  .banda-abajo {
+    animation: mover-izquierda 5s linear infinite;
+  }
+
+  @keyframes mover-derecha {
+    from { background-position: 0 0; }
+    to { background-position: 60px 0; }
+  }
+
+  @keyframes mover-izquierda {
+    from { background-position: 0 0; }
+    to { background-position: -60px 0; }
+  }
+
+  /* Botonera */
+  .botonera {
+    display: flex;
+    gap: 20px;
+  }
+
+  .botonera button {
+    background: #111122;
+    color: #00ffea;
+    border: 2px solid #00ffea;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ffea;
+    transition: 0.2s;
+  }
+
+  .botonera button:hover {
+    background: #00ffea;
+    color: #111122;
+    box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+  }
+  .materias {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* espacio entre los botones */
+    padding: 40px;
+  }
+  .materias a{
+    color: black;
+  }
+
+  .materias button {
+    display: flex;
+    flex-direction: row; /* ícono a la izquierda, texto a la derecha */
+    align-items: center;
+    gap: 12px;
+    width: 40%;
+    height: 40%;
+    background: #f5b401;
+    border: 2px solid #333;
+    border-radius: 12px;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  .white{
+    background-color: #fff;
+  }
+  .white h1{
+    font-family:monospace;
+    font-size: 3rem;
+
+  }
+  
+
+  .materias button:hover {
+    transform: scale(1.1); /* se agrandan */
+  }
+
+  .materias button svg {
+    width: 40%;
+    height: 100%;
+  }
+  
+  .materiasAs {
+    display: flex;
+    justify-content: center;
+    gap: 30%; /* espacio entre los botones */
+    padding: 40px;
+  }
+
+  .materiasAs a{
+    color: white;
+  }
+  .materiasAs button {
+    display: flex;
+    flex-direction: row; /* ícono a la izquierda, texto a la derecha */
+    align-items: center;
+    gap: 12px;
+    width: 40%;
+    height: 40%;
+    background: #125d36;
+    border: 2px solid #333;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+    .materiasAs button:hover {
+    transform: scale(1.1); /* se agrandan */
+  }
+
+  .materiasAs button svg {
+    width: 40%;
+    height: 100%;
+  }
+
+.seccionTextoCentrada {
+  text-align: center;
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.seccionTextoCentrada h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.seccionTextoCentrada p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+}
